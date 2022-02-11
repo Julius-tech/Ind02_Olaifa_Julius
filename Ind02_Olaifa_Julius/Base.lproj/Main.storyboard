@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,183 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ind02_Olaifa_Julius" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Julius Olaifa" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-x3-Yqv">
+                                <rect key="frame" x="141" y="96" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <color key="textColor" red="0.72384610091292512" green="0.94969456531632657" blue="0.94422425222244899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-B9-hV3">
+                                <rect key="frame" x="20" y="210" width="372" height="465"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96324936221020419" green="0.60020727038775512" blue="0.6032897534013606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell12" translatesAutoresizingMaskIntoConstraints="NO" id="wAy-RF-pq2">
+                                <rect key="frame" x="206" y="303" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell00" translatesAutoresizingMaskIntoConstraints="NO" id="FDj-qw-bGS">
+                                <rect key="frame" x="20" y="210" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell03" translatesAutoresizingMaskIntoConstraints="NO" id="5WA-bo-5SW">
+                                <rect key="frame" x="299" y="210" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell02" translatesAutoresizingMaskIntoConstraints="NO" id="VMC-9f-GHi">
+                                <rect key="frame" x="206" y="210" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Puzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-2Q-dGI">
+                                <rect key="frame" x="135" y="134" width="138" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                <color key="textColor" red="0.33551232993197277" green="0.39192458232312921" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell01" translatesAutoresizingMaskIntoConstraints="NO" id="NLJ-hH-RMS">
+                                <rect key="frame" x="113" y="210" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell10" translatesAutoresizingMaskIntoConstraints="NO" id="Utq-Me-8ap">
+                                <rect key="frame" x="20" y="303" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell13" translatesAutoresizingMaskIntoConstraints="NO" id="DWO-k9-cwF">
+                                <rect key="frame" x="299" y="303" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell20" translatesAutoresizingMaskIntoConstraints="NO" id="99x-No-IyF">
+                                <rect key="frame" x="20" y="396" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell21" translatesAutoresizingMaskIntoConstraints="NO" id="M6E-3Q-p1B">
+                                <rect key="frame" x="113" y="396" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell22" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-E5-PJj">
+                                <rect key="frame" x="206" y="396" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell23" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-N7-rEC">
+                                <rect key="frame" x="299" y="396" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell30" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-Uw-lWH">
+                                <rect key="frame" x="20" y="489" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell31" translatesAutoresizingMaskIntoConstraints="NO" id="M7d-Us-Ony">
+                                <rect key="frame" x="113" y="489" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell32" translatesAutoresizingMaskIntoConstraints="NO" id="VXl-CM-TNT">
+                                <rect key="frame" x="206" y="489" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell33" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-pa-Vba">
+                                <rect key="frame" x="299" y="489" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell40" translatesAutoresizingMaskIntoConstraints="NO" id="PxU-Wi-hyA">
+                                <rect key="frame" x="20" y="582" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell41" translatesAutoresizingMaskIntoConstraints="NO" id="k6I-EF-34q">
+                                <rect key="frame" x="113" y="582" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell42" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-9P-Ufc">
+                                <rect key="frame" x="206" y="582" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzw-qu-Ref">
+                                <rect key="frame" x="299" y="582" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell11" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-GP-6yE">
+                                <rect key="frame" x="113" y="303" width="93" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69P-EA-ykv">
+                                <rect key="frame" x="145" y="724" width="118" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.19607843137254902" blue="0.36862745098039218" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Shuffle" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-th-ELp">
+                                <rect key="frame" x="87" y="786" width="240" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.54509803921568623" green="0.85882352941176465" blue="0.50588235294117645" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Answer">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXq-hv-9ob"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.77500531462585032" green="0.59685161564625855" blue="0.69731823979591845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="cell00" destination="FDj-qw-bGS" id="0g0-3Z-kF0"/>
+                        <outlet property="cell01" destination="NLJ-hH-RMS" id="ARh-Lb-x6z"/>
+                        <outlet property="cell02" destination="VMC-9f-GHi" id="0a3-WV-EX0"/>
+                        <outlet property="cell03" destination="5WA-bo-5SW" id="CEh-c6-BPe"/>
+                        <outlet property="cell10" destination="Utq-Me-8ap" id="940-XS-N4m"/>
+                        <outlet property="cell11" destination="ouL-GP-6yE" id="Kjb-nS-IoN"/>
+                        <outlet property="cell12" destination="wAy-RF-pq2" id="Qun-ht-yBT"/>
+                        <outlet property="cell13" destination="DWO-k9-cwF" id="7nV-BL-GDG"/>
+                        <outlet property="cell20" destination="99x-No-IyF" id="5Sc-sd-Jln"/>
+                        <outlet property="cell21" destination="M6E-3Q-p1B" id="7FT-Ny-oyb"/>
+                        <outlet property="cell22" destination="AAk-E5-PJj" id="1V9-6R-Qk9"/>
+                        <outlet property="cell23" destination="sLv-N7-rEC" id="Zb1-9Y-clQ"/>
+                        <outlet property="cell30" destination="fFb-Uw-lWH" id="TCG-yR-AqR"/>
+                        <outlet property="cell31" destination="M7d-Us-Ony" id="E36-6U-ufr"/>
+                        <outlet property="cell32" destination="VXl-CM-TNT" id="46t-dh-vIo"/>
+                        <outlet property="cell33" destination="pB4-pa-Vba" id="Gbd-em-Kvs"/>
+                        <outlet property="cell40" destination="PxU-Wi-hyA" id="vbM-iZ-diq"/>
+                        <outlet property="cell41" destination="k6I-EF-34q" id="Sgs-hN-VUI"/>
+                        <outlet property="cell42" destination="dqm-9P-Ufc" id="fPu-cg-zEd"/>
+                        <outlet property="cell43" destination="zzw-qu-Ref" id="agE-XD-oSS"/>
+                        <outlet property="showAnswerButton" destination="7oJ-th-ELp" id="HXC-iq-h3n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cell00" width="950" height="950"/>
+        <image name="cell01" width="951" height="950"/>
+        <image name="cell02" width="950" height="950"/>
+        <image name="cell03" width="951" height="950"/>
+        <image name="cell10" width="950" height="951"/>
+        <image name="cell11" width="951" height="951"/>
+        <image name="cell12" width="950" height="951"/>
+        <image name="cell13" width="951" height="951"/>
+        <image name="cell20" width="950" height="950"/>
+        <image name="cell21" width="951" height="950"/>
+        <image name="cell22" width="950" height="950"/>
+        <image name="cell23" width="951" height="950"/>
+        <image name="cell30" width="950" height="951"/>
+        <image name="cell31" width="951" height="951"/>
+        <image name="cell32" width="950" height="951"/>
+        <image name="cell33" width="951" height="951"/>
+        <image name="cell40" width="950" height="951"/>
+        <image name="cell41" width="951" height="951"/>
+        <image name="cell42" width="950" height="951"/>
+    </resources>
 </document>
