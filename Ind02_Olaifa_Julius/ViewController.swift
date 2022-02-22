@@ -8,14 +8,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var images: [[UIImage?]] =
-    [[UIImage(named: "cell00.png"), UIImage(named: "cell01.png"), UIImage(named: "cell02.png"), UIImage(named: "cell03.png")],
-     [UIImage(named: "cell10.png"), UIImage(named: "cell11.png"), UIImage(named: "cell12.png"), UIImage(named: "cell13.png")],
-     [UIImage(named: "cell20.png"), UIImage(named: "cell21.png"), UIImage(named: "cell22.png"), UIImage(named: "cell23.png")],
-     [UIImage(named: "cell30.png"), UIImage(named: "cell31.png"), UIImage(named: "cell32.png"), UIImage(named: "cell33.png")],
-     [UIImage(named: "cell40.png"), UIImage(named: "cell41.png"), UIImage(named: "cell42.png"), UIImage(named: "cell43.png")]
-     ]
+    
+    let row = 5
+    let col = 4
+    
+    // the initial empty position on the puzzleBoard
+    var emptyPosition = (4, 3)
+    
+    // A 2-D array of the ImageViews to capture the state of the puzzle
+    lazy var imageViews =
+                           [[cell00,cell01,cell02,cell03],
+                           [cell10,cell11, cell12,cell13],
+                           [cell20,cell21,cell22,cell23],
+                           [cell30,cell31,cell32,cell33],
+                           [cell40,cell41,cell42,cell43]]
+    
+    // A 2-D array of the ImageFiles name
+    var imageFiles =
+        [["cell00.png","cell01.png","cell02.png","cell03.png"],
+        ["cell10.png","cell11.png", "cell12.png","cell13.png"],
+        ["cell20.png","cell21.png","cell22.png","cell23.png"],
+        ["cell30.png","cell31.png","cell32.png","cell33.png"],
+        ["cell40.png","cell41.png","cell42.png","cell43.png"]]
 
+    
+    
+    //  IBOUTLETS //
     @IBOutlet weak var cell00: UIImageView!
     @IBOutlet weak var cell01: UIImageView!
     @IBOutlet weak var cell02: UIImageView!
@@ -37,71 +55,115 @@ class ViewController: UIViewController {
     @IBOutlet weak var cell42: UIImageView!
     @IBOutlet weak var cell43: UIImageView!
     
+    @IBOutlet weak var wholeImage: UIImageView!
+    
+    @IBOutlet weak var shuffleButton: UIButton!
     @IBOutlet weak var showAnswerButton: UIButton!
+    
+    // Tap Handler for the Imageviews uses ViewPosition function to make legal swaps
+    @IBAction func tapHandler(_ sender: UITapGestureRecognizer) {
+        let newPosition = ViewPosition(imageView: sender.view!)!
+        if (emptyPosition.0 == newPosition.0 && (emptyPosition.1 == newPosition.1+1 || emptyPosition.1 == newPosition.1-1)||emptyPosition.1 == newPosition.1 && (emptyPosition.0 == newPosition.0+1 || emptyPosition.0 == newPosition.0-1)){
+            swapImages(imagePosition: newPosition)
+            if checkSolved() == true {
+                shuffleButton.setTitle("Solved! Shuffle Again?", for: .normal)
+                shuffleButton.backgroundColor = .red
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        correctDisplay()
+        puzzleState()
     }
     
-    func correctDisplay() {
-        cell00.image = UIImage(named: "cell00.png")
-        cell01.image = UIImage(named: "cell01.png")
-        cell02.image = UIImage(named: "cell02.png")
-        cell03.image = UIImage(named: "cell03.png")
-        cell10.image = UIImage(named: "cell10.png")
-        cell11.image = UIImage(named: "cell11.png")
-        cell12.image = UIImage(named: "cell12.png")
-        cell13.image = UIImage(named: "cell13.png")
-        cell20.image = UIImage(named: "cell20.png")
-        cell21.image = UIImage(named: "cell21.png")
-        cell22.image = UIImage(named: "cell22.png")
-        cell23.image = UIImage(named: "cell23.png")
-        cell30.image = UIImage(named: "cell30.png")
-        cell31.image = UIImage(named: "cell31.png")
-        cell32.image = UIImage(named: "cell32.png")
-        cell33.image = UIImage(named: "cell33.png")
-        cell40.image = UIImage(named: "cell40.png")
-        cell41.image = UIImage(named: "cell41.png")
-        cell42.image = UIImage(named: "cell42.png")
-        cell43.image = UIImage(named: "cell43.png")
-    }
-    
-    func gameState() {
-        cell00.image = images[0][0]
-        cell01.image = images[0][1]
-        cell02.image = images[0][2]
-        cell03.image = images[0][3]
-        cell10.image = images[1][0]
-        cell11.image = images[1][1]
-        cell12.image = images[1][2]
-        cell13.image = images[1][3]
-        cell20.image = images[2][0]
-        cell21.image = images[2][1]
-        cell22.image = images[2][2]
-        cell23.image = images[2][3]
-        cell30.image = images[3][0]
-        cell31.image = images[3][1]
-        cell32.image = images[3][2]
-        cell33.image = images[3][3]
-        cell40.image = images[4][0]
-        cell41.image = images[4][3]
-        cell42.image = images[4][3]
-        cell43.image = images[4][3]
-    }
-
+    // An IBAction for the "Show Answer" Button that displays the game solution
     @IBAction func showAnswer(_ sender: Any) {
         if showAnswerButton.titleLabel?.text == "Show Answer" {
-            correctDisplay()
+            solvedState()
             showAnswerButton.setTitle("Hide Answer", for: .normal)
         } else {
             showAnswerButton.setTitle("Show Answer", for: .normal)
-            gameState()
+            puzzleState()
         }
 
     }
     
+    // An IBAction for the "Shuffle" Button that shuffles the puzzle
+    @IBAction func shuffle(_ sender: Any) {
+        if shuffleButton.titleLabel?.text == "Shuffle" {
+            shuffle()
+        } else {
+            shuffleButton.setTitle("Shuffle", for: .normal)
+            shuffleButton.backgroundColor = .systemTeal
+        }
+    }
+    
+    // A custom function that handles the shuffle logic using the swapImages function.
+    func shuffle() {
+        for _ in stride(from: 200, to: 0, by: -1) {
+            let numbers = [-1,0,1]
+            let direction = (numbers.randomElement()!, numbers.randomElement()!)
+            let newPosition: (Int, Int) = (emptyPosition.0 + direction.0, emptyPosition.1 + direction.1)
+            if 0 <= newPosition.0 && newPosition.0 < row && 0 <= newPosition.1 && newPosition.1 < col {
+                swapImages(imagePosition: newPosition)
+            }
+        }
+    }
+    
+    // A function that sets the ImageViews to the present position of the images.
+    func puzzleState(){
+        for i in 0...row-1{
+            for j in 0...col-1{
+                let image = UIImage(named: imageFiles[i][j])
+                imageViews[i][j]?.image = image
+            }
+        }
+    }
+    
+    // This displays solution to the puzzle.
+    func solvedState(){
+        for i in 0...row-1{
+            for j in 0...col-1{
+                let image = UIImage(named: "cell\(i)\(j).png")
+                imageViews[i][j]?.image = image
+            }
+        }
+    }
+    
+    //This returns the position of a View in the 2-D array
+    func ViewPosition(imageView: UIView) -> (Int, Int)? {
+        for i in 0...row-1{
+            for j in 0...col-1{
+                if imageView == imageViews[i][j]{
+                    return (i, j)
+                }
+            }
+        }
+        return nil
+    }
+    
+    // This function swaps the images of the empty position with the image of a view tapped
+    func swapImages(imagePosition: (Int, Int)) {
+        let tapepedImage = imageViews[imagePosition.0][imagePosition.1]?.image
+        let tappedImageFile = imageFiles[imagePosition.0][imagePosition.1]
+        imageViews[imagePosition.0][imagePosition.1]?.image = imageViews[emptyPosition.0][emptyPosition.1]?.image
+        imageFiles[imagePosition.0][imagePosition.1] = imageFiles[emptyPosition.0][emptyPosition.1]
+        imageViews[emptyPosition.0][emptyPosition.1]?.image = tapepedImage
+        imageFiles[emptyPosition.0][emptyPosition.1] = tappedImageFile
+        emptyPosition = imagePosition
+    }
+    
+    // This function checks if the puzzle is solved and returns a boolean
+    func checkSolved() -> Bool{
+        for i in 0...row-1{
+            for j in 0...col-1{
+                if imageFiles[i][j] != "cell\(i)\(j).png" {
+                    return false
+                }
+            }
+        }
+        return true
+    }
 }
-
-
